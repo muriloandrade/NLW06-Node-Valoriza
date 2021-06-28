@@ -1,7 +1,7 @@
 import { getCustomRepository } from "typeorm";
 import { UsersRepositories } from "../repositories/UserRepositories";
 
-type UserRequestType = {
+type UserType = {
   name: string;
   email: string;
   admin?: boolean;
@@ -9,7 +9,7 @@ type UserRequestType = {
 
 class CreateUserService {
   
-  async execute({name, email, admin} : UserRequestType) {
+  async execute({name, email, admin} : UserType) {
     
     const usersRepository = getCustomRepository(UsersRepositories);
 
